@@ -2,9 +2,13 @@
   "name": "smart_city",
   "version": "1.0.0",
   "description": "Smart City Project - Bits Pilani Assignment",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "concurrently --kill-others --names gateway,users,complaints,geo,frontend \"npm run dev -w gateway\" \"npm run dev -w services/users\" \"npm run dev -w services/complaints\" \"npm run dev -w services/geo\" \"npm run dev -w frontend\"",
+    "start": "concurrently --kill-others --names gateway,users,complaints,geo,frontend \"npm start -w gateway\" \"npm start -w services/users\" \"npm start -w services/complaints\" \"npm start -w services/geo\" \"npm start -w frontend\"",
+    "db:migrate": "node scripts/migrate.mjs",
+    "build": "npm run build -w frontend",
+    "check": "node scripts/check.mjs",
+    "test": "npm run check"
   },
   "repository": {
     "type": "git",
@@ -18,5 +22,21 @@
   "bugs": {
     "url": "https://github.com/ibrahimballa20/smart_city/issues"
   },
-  "homepage": "https://github.com/ibrahimballa20/smart_city#readme"
+  "homepage": "https://github.com/ibrahimballa20/smart_city#readme",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "workspaces": [
+    "frontend",
+    "gateway",
+    "services/*"
+  ],
+  "dependencies": {
+    "dotenv": "^17.2.0"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.0"
+  }
 }

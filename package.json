@@ -1,0 +1,22 @@
+{
+  "name": "smart_city",
+  "version": "1.0.0",
+  "description": "Smart City Project - Bits Pilani Assignment",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ibrahimballa20/smart_city.git"
+  },
+  "keywords": [
+    "smart_city"
+  ],
+  "author": "Ibrahim Yerima Balla (2023EBCS153)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ibrahimballa20/smart_city/issues"
+  },
+  "homepage": "https://github.com/ibrahimballa20/smart_city#readme"
+}
